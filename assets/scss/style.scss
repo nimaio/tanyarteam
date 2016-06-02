@@ -1,0 +1,662 @@
+@import '_variables.scss', '_mixins.scss', 'rem';
+header {
+    &.header {
+        width: 100%;
+        border: none;
+        background: $primary_color;
+        @include rem(( height: 110px,));
+        &.header_active {
+            transform: translate(20%,0);
+        }
+        .toggle_sidebar_right {
+            float: right;
+            text-align: center;
+            background: $secondary_color;
+            @include rem(( height: 110px,width: 10%,line-height: 110px,font-size: 35px,));
+            a {
+                display: block;
+                color: #fff;
+            }
+        }
+        .logo {
+            float: right;
+            @include rem(( margin-top: 30px,));
+        }
+        .menu_header {
+            float: left;
+            ul {
+                padding: 0;
+                float: left;
+                list-style: none;
+                li {
+                    float: right;
+                    position: relative;
+                    text-align: center;
+                    display: inline-block;
+                    @include rem((padding: 30px,min-height: 110px,));
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        bottom: -5px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 0;
+                        background: $secondary_color;
+                        transition: all 0.5s;
+                        @include rem((height: 5px,));
+                    }
+                    &.sign_out {
+                        &:after {
+                            background: #e66a5d;
+                        }
+                        a {
+                            i {
+                                color: #e66a5d;
+                            }
+                        }
+                    }
+                    a {
+                        position: relative;
+                        i {
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 50%;
+                            color: $secondary_color;
+                            transition: all 0.5s;
+                            transform: translate(-50%,0);
+                            @include rem((font-size: 35px,));
+                        }
+                        span {
+                            position: relative;
+                            transition: all 0.5s;
+                            font-weight: bold;
+                            bottom: -45px;
+                            color: #fff;
+                            @include rem((font-size: 12px,));
+                        }
+                    }
+                    &:hover {
+                        a {
+                            i {
+                                opacity: 0.1;
+                                filter: grayscale(100%);
+                                @include rem((font-size: 45px,));
+                            }
+                            span {
+                                bottom: -20px;
+                            }
+                        }
+                    }
+                }
+                li:hover:after {
+                    width: 100%;
+                }
+            }
+        }
+        .navbar-toggle {
+            /*border: 1px solid #FF5252;*/
+            border-radius: 3px;
+            margin-top: 25px;
+            padding: 12px 10px;
+            display: block;
+            border: none;
+            /*background-color: #FF5252;*/
+            &:focus,
+            &:hover {
+                background: transparent !important;
+            }
+            &.btn-anim-three {
+                border-radius: 3px;
+                position: relative;
+                @include rem((width: 110px, height: 110px, line-height: 110px, margin: 0,));
+                span {
+                    position: absolute;
+                    height: 5px;
+                    border-radius: 4px;
+                    background: #fff;
+                    -webkit-transition: all 0.4s ease;
+                    -moz-transition: all 0.4s ease;
+                    transition: all 0.4s ease;
+                    &.one {
+                        width: 30px;
+                        top: 40%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                    &.two {
+                        width: 30px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                    &.three {
+                        width: 30px;
+                        top: 60%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+                &.closed {
+                    span {
+                        &.one {
+                            width: 30px;
+                            top: 50%;
+                            left: 50%;
+                            transform: rotate(225deg);
+                        }
+                        &.two {
+                            top: 50%;
+                            left: 50%;
+                            opacity: 0;
+                        }
+                        &.three {
+                            width: 30px;
+                            top: 50%;
+                            left: 50%;
+                            transform: rotate(-225deg);
+                        }
+                    }
+                }
+            }
+        }
+        .sb-toggle-left {
+            float: left;
+            @include rem(( padding: 14px, ));
+        }
+        .sb-toggle-right {
+            float: right;
+            @include rem(( width: 58px,padding: 14px, ));
+        }
+        .sb-close,
+        .sb-open-left,
+        .sb-open-right,
+        .sb-toggle-left,
+        .sb-toggle-right {
+            cursor: pointer;
+        }
+        .navicon-line {
+            background-color: #fff;
+            @include rem(( width: 24px,height: 4px,border-radius: 1px,margin-bottom: 3px,));
+        }
+    }
+}
+#wrapper {
+    width: 100%;
+    float: left;
+    position: relative;
+    &.wrapper_active {
+        margin-left: 20%;
+    }
+    &.toggled {
+        @include rem(( padding-right: 250px, ));
+        #sidebar {
+            @include rem(( width: 250px, ));
+        }
+        #main {
+            position: absolute;
+            @include rem(( margin-right: -250px,));
+        }
+    }
+    #sidebar {
+        background: $primary_color_light;
+        z-index: 1000;
+        position: fixed;
+        width: 0;
+        height: 100%;
+        overflow-y: auto;
+        transition: all 0.5s ease;
+        @include rem(( right: 250px, margin-right: -250px,));
+    }
+    #main {
+        width: 100%;
+        // position: absolute;
+        // @include rem(( padding: 15px,));
+        header {
+            &#header {
+                background: $primary_color;
+                @include rem(( height: 110px,));
+            }
+        }
+        .content {
+            width: 100%;
+            float: right;
+            @include rem(( padding: 25px,));
+            .visit_list {
+                width: 100%;
+                float: right;
+                header {
+                    width: 100%;
+                    float: right;
+                    @include rem(( margin: 20px 0,));
+                    h4 {
+                        color: $text_color_dark;
+                        margin: 0;
+                        @include rem(( font-size: 12px,));
+                    }
+                    h1 {
+                        color: $primary_color;
+                        font-weight: bold;
+                        @include rem(( font-size: 20px,));
+                    }
+                    .meta {
+                        color: $text_color_dark;
+                        span {
+                            @include rem(( margin-left: 30px,));
+                        }
+                    }
+                }
+                .visit_query {
+                    float: right;
+                    width: 100%;
+                    .total {
+                        background: #ecf0f6;
+                        color: $primary_color;
+                        float: right;
+                        @include rem(( font-size: 10px,padding: 5px 10px,border-radius: 4px,margin: 10px 0 10px 10px,));
+                    }
+                    .success {
+                        background: $secondary_color;
+                        color: #fff;
+                        float: right;
+                        @include rem(( font-size: 10px,padding: 5px 10px,border-radius: 4px,margin: 10px 0 10px 10px,));
+                    }
+                    .fail {
+                        background: #e66a5d;
+                        color: #fff;
+                        float: right;
+                        @include rem(( font-size: 10px,padding: 5px 10px,border-radius: 4px,margin: 10px 0 10px 10px,));
+                    }
+                }
+                .table-responsive {
+                    width: 100%;
+                    float: right;
+                }
+                table {
+                    border: solid #f0f0f0;
+                    @include rem(( border-width: 1px, border-radius: 4px,));
+                    tr {
+                        &:hover {
+                            background: #f4f7f8;
+                        }
+                        color: $primary_color;
+                        th {
+                            border-top: none;
+                            color: #97a2b2;
+                            background: #f4f7f8;
+                            @include rem(( padding: 20px 10px,));
+                        }
+                        td {
+                            vertical-align: middle;
+                            border-top: solid #f0f0f0;
+                            @include rem(( border-width: 1px,padding: 15px 10px,));
+                        }
+                        td.day {
+                            font-weight: 500;
+                            color: $secondary_color;
+                        }
+                        td.program_dl {
+                            span {
+                                font-weight: bold;
+                                @include rem(( padding: 5px,font-size: 18px,));
+                                a {
+                                    color: $text_color_dark;
+                                }
+                            }
+                        }
+                        td.status {
+                            span.success {
+                                font-weight: bold;
+                                color: $secondary_color;
+                                @include rem(( padding: 5px,font-size: 18px,));
+                            }
+                            span.fail {
+                                font-weight: bold;
+                                color: #e66a5d;
+                                @include rem(( padding: 5px,font-size: 18px,));
+                            }
+                        }
+                    }
+                }
+            }
+            // visit_list
+            .register_section {
+                .form_step {
+                    color: $text_color_dark;
+                    width: 100%;
+                    float: right;
+                    .steps {
+                      a {
+                        color: $text_color_dark;
+                      }
+                        &.step_active {
+                          a {
+                                color: $secondary_color;
+                          }
+
+                            &:after {
+                                position: absolute;
+                                content: '';
+                                bottom: -5px;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                                width: 100%;
+                                background: $secondary_color !important;
+                                transition: all 0.5s;
+                                @include rem((height: 2px,));
+                            }
+                        }
+                        &.step_1 {
+                            float: right;
+                            width: (100%) / 6;
+                            position: relative;
+                            &:after {
+                                position: absolute;
+                                content: '';
+                                bottom: -5px;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                                width: 100%;
+                                background: $text_color_dark;
+                                transition: all 0.5s;
+                                @include rem((height: 2px,));
+                            }
+                            span.number {
+                                display: block;
+                                text-align: center;
+                            }
+                            span.label {
+                                color: inherit;
+                                display: block;
+                                text-align: center;
+                                @include rem(( padding: 10px,font-size: 12px,));
+                            }
+                        }
+                    }
+                }
+                .form_body {
+                    width: 50%;
+                    @include rem(( margin: 25px auto,));
+                    input[type="text"],
+                    input[type="email"],
+                    textarea {
+                        position: relative;
+                        border: none;
+                        border-bottom: solid #f0f0f0;
+                        box-sizing: border-box;
+                        transition: all 0.5s;
+                        width: 100%;
+                        @include rem(( border-bottom-width: 1px, padding: 10px,height: 45px,));
+                        &:focus {
+                            border-bottom-color: $secondary_color;
+                            color: $secondary_color;
+                        }
+                    }
+                    input[type="radio"] {
+                      position: relative;
+                      margin: 0;
+                      top: 3px;
+
+                    }
+                    textarea {
+                      outline:none;
+                      @include rem(( height: 100px,));
+
+                    }
+                    .step_1 {
+                      .form-group {
+                        &.goal {
+                          label {
+                            position: relative;
+                            display: block;
+                            padding: 0;
+                            @include rem(( height: 35px,line-height: 35px,));
+
+                          }
+                        }
+                      }
+                    }
+                    .step_2 {
+                      .form-group {
+                        &.birthday, &.province, &.city {
+                          select {
+                            position: relative;
+                            border: none;
+                            border-bottom: solid #f0f0f0;
+                            width: ((100%) / 3) - 1%;
+                            box-sizing: border-box;
+                            transition: all 0.5s;
+                            @include rem(( border-bottom-width: 1px, padding: 10px,height: 45px,));
+
+                          }
+                        }
+                        &.province, &.city {
+                          select {
+                            width: 100%;
+
+                          }
+                        }
+                      }
+
+                    }
+                }
+            }
+        }
+        // content
+    }
+}
+// wrapper
+.sidebar_right {
+    &.sidebar_active {
+        display: block;
+        transform: translate(-250px,0);
+        margin-right: -250px;
+        width: 10%;
+        height: 100%;
+    }
+}
+.sidebar_right {
+    width: 0;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    display: none;
+    background: $primary_color_light;
+    transform: translate(0,0);
+    transition: transform 400ms ease;
+    @include rem(( height: 110px,line-height: 110px,margin-top: 110px,));
+    .menu_column {
+        width: 100%;
+        float: right;
+        ul {
+            list-style: none;
+            width: 100%;
+            float: right;
+            padding: 0;
+            margin: 0;
+            li {
+                float: right;
+                width: 100%;
+                text-align: center;
+                line-height: 2.5;
+                @include rem(( padding: 25px,));
+                a {
+                    text-align: center;
+                    display: block;
+                    color: $text_color_dark;
+                    span.icon {
+                        display: block;
+                        width: 100%;
+                        float: right;
+                        i {
+                            @include rem(( font-size: 45px,));
+                        }
+                    }
+                }
+            }
+            li:hover a {
+                color: $primary_color;
+            }
+        }
+    }
+}
+// sidebar_right
+.sidebar_left {
+    &.sidebar_active {
+        display: block;
+        transform: translate(0,0);
+        width: 20%;
+        transition: transform 400ms ease;
+    }
+}
+.sidebar_left {
+    width: 0;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: none;
+    transform: translate(-100%,0);
+    transition: transform 400ms ease;
+    background: #ecf0f6;
+    z-index: 99999;
+    .user_information {
+        height: auto;
+        overflow: hidden;
+        @include rem(( padding: 25px,));
+        .user_picture {
+            float: right;
+            width: 100%;
+            figure {
+                position: relative;
+                a {
+                    display: block;
+                    img {
+                        width: 50%;
+                        margin: 0 auto;
+                        border-radius: 50%;
+                        display: block;
+                        border: solid $text_color_dark;
+                        @include rem(( border-width: 5px,));
+                    }
+                }
+                span.edit_picture {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    background: #fff;
+                    border-radius: 50%;
+                    text-align: center;
+                    transform: translate(100%,30%);
+                    @include rem(( width: 25px, height: 25px,line-height: 25px,));
+                }
+                figcaption {
+                    text-align: center;
+                    h2 {
+                        color: $primary_color;
+                        font-weight: bold;
+                        @include rem(( font-size: 14px,));
+                    }
+                }
+            }
+        }
+        .body_composition_new {
+            width: 100%;
+            float: right;
+            border: solid $text_color_dark;
+            @include rem(( border-width: 0 0 1px 0,padding-bottom: 20px,));
+            h3 {
+                color: $text_color_dark;
+                @include rem(( font-size: 12px,));
+            }
+            .weight {
+                float: right;
+                width: 50%;
+                text-align: right;
+                h2 {
+                    font-weight: bold;
+                    color: $secondary_color;
+                    margin-bottom: 0;
+                    @include rem(( font-size: 60px,));
+                }
+                span {
+                    color: $primary_color;
+                    font-weight: 500;
+                }
+            }
+            .height {
+                float: right;
+                width: 50%;
+                text-align: left;
+                h2 {
+                    font-weight: bold;
+                    color: $secondary_color;
+                    margin-bottom: 0;
+                    @include rem(( font-size: 60px,));
+                }
+                span {
+                    color: $primary_color;
+                    font-weight: 500;
+                }
+            }
+            .file_number {
+                float: right;
+                width: 100%;
+                text-align: center;
+                h2 {
+                    font-weight: bold;
+                    color: $secondary_color;
+                    margin-bottom: 0;
+                    @include rem(( font-size: 60px,));
+                }
+                span {
+                    color: $primary_color;
+                    font-weight: 500;
+                }
+            }
+        }
+        .body_composition_old {
+            width: 100%;
+            float: right;
+            ul {
+                list-style: none;
+                float: right;
+                width: 100%;
+                padding: 0;
+                @include rem(( margin: 10px 0,));
+                li {
+                    float: right;
+                    width: 100%;
+                    @include rem(( padding: 5px 0,));
+                    h2 {
+                        color: $primary_color;
+                        font-weight: 500;
+                        display: inline-block;
+                        margin: 0;
+                        @include rem(( font-size: 12px,));
+                    }
+                    span {
+                        color: $secondary_color;
+                        font-weight: 500;
+                        float: left;
+                        @include rem(( font-size: 12px,));
+                    }
+                }
+            }
+            a.final_paper {
+                background: #6a51dc;
+                color: #fff;
+                float: right;
+                @include rem(( font-size: 10px,padding: 5px 10px,border-radius: 4px,margin: 10px 0,));
+            }
+        }
+    }
+}
+// sidebar_left

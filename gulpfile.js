@@ -16,7 +16,7 @@ gulp.task('sass', function(){
 	}))
 	//.pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('assets/css/seperated'))
-	.pipe(concat('terme.css'))
+	.pipe(concat('tanyarteam.css'))
     .pipe(gulp.dest('assets/css'));
 });
 

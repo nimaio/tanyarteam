@@ -1,9 +1,11 @@
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  height: 100%; }
 
 body {
   font-family: 'IRANSans';
   color: #5dc560;
+  height: 100%;
   font-size: 12px;
   font-size: 1.2rem; }
 

@@ -4,11 +4,13 @@
 // Theme Normalize
 html {
   @include rem-baseline;
+  height: 100%;
 }
 
 body {
 	font-family: 'IRANSans';
 	color: $secondary_color;
+  height: 100%;
 	@include rem(font-size, 12px);
 }
 a {

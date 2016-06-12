@@ -18,81 +18,39 @@
 			 <div class="container-fluid">
 				 <div class="row">
 					 <section class="col-xs-12" style="padding:0">
+
 						 <div class="content">
 							 <div class="notification success">
-									 <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
-									 <h3>شما در حال ارسال درخواست در واحد پشتیبانی تن یار هستید. در صورتی که درخواست شما به این واحد مرتبط نیست، به صفحه انتخاب واحد ها بازگردید.</h3>
-							 </div>
-							 <div class="notification error">
-									 <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
-									 <h3>شما در حال ارسال درخواست در واحد پشتیبانی تن یار هستید. در صورتی که درخواست شما به این واحد مرتبط نیست، به صفحه انتخاب واحد ها بازگردید.</h3>
-							 </div>
-							 <div class="notification info">
-									 <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
-									 <h3>شما در حال ارسال درخواست در واحد پشتیبانی تن یار هستید. در صورتی که درخواست شما به این واحد مرتبط نیست، به صفحه انتخاب واحد ها بازگردید.</h3>
-							 </div>
-							 <div class="visit_list">
-								 <header>
-									 <h4>پیشخوان</h4>
-									 <h1>لیست ویزیت های شما</h1>
-									 <div class="meta">
-										 <span><i class="fa fa-map-marker" aria-hidden="true"></i> تهران</span>
-										 <span><i class="fa fa-smile-o" aria-hidden="true"></i> تاریخ تولد <strong>20/11/1365</strong></span>
-										 <span><i class="fa fa-calendar" aria-hidden="true"></i> تاریخ تشکیل پرونده <strong>20/11/1365</strong></span>
-								 </div>	</header>
-								 <div class="visit_query">
-									 <span class="total">تا کنون <strong>21</strong> بار وقت ویزیت داشته اید</span>
-									 <span class="success"><strong>10</strong>  بار ویزیت شده اید</span>
-									 <span class="fail"><strong>10</strong> بار کنسل کرده اید</span>
-								 </div>
-								 <div class="table-responsive">
-								 <table class="table table-hover">
-									 <tr>
-										 <th>روز</th>
-										 <th>تاریخ</th>
-										 <th>ساعت</th>
-										 <th>بازدید / برنامه</th>
-										 <th>توضیحات</th>
-										 <th>وضعیت</th>
+									<span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+									<h3>شما در حال ارسال درخواست در واحد پشتیبانی تن یار هستید. در صورتی که درخواست شما به این واحد مرتبط نیست، به صفحه انتخاب واحد ها بازگردید.</h3>
+							</div>
+							<div class="ticket_section">
+								<form class="" action="index.html" method="post">
+									<div class="form_body">
+										<div class="form-group name">
+											<input type="text" name="instagram_id" value="" placeholder="نام و نام خانوادگی" disabled="disabled">
+										</div>
+										<div class="form-group email">
+											<input type="email" name="instagram_id" value="" placeholder="آدرس ایمیل" disabled="disabled">
+										</div>
+										<div class="form-group subject">
+											<input type="text" name="instagram_id" value="" placeholder="موضوع">
+										</div>
+										<div class="form-group">
+											<textarea name="name" rows="8" cols="40" placeholder="پیام درخواست"></textarea>
+										</div>
+										<div class="form-group">
+											 <input type="file" name="pic" accept="image/*">
+										</div>
+										<div class="form-group">
+											<button type="button" name="button" class="next"><strong>ارسال درخواست</strong> <i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+										</div>
 
-									 </tr>
-									 <tr>
-										 <td class="day">شنبه</td>
-										 <td class="date">12 فروردین 1394</td>
-										 <td class="time">12:45</td>
-										 <td><span class="label label-success">بازدید</span></td>
-										 <td class="program_dl">
-											 <span><a href="#" data-tooltip="دریافت برنامه غذایی"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
-											 <span><i class="fa fa-lemon-o" aria-hidden="true"></i></span>
-											 <span><i class="fa fa-line-chart" aria-hidden="true"></i></span>
-										 </td>
-										 <td class="status">
-										 	<span class="fail"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
-										 </td>
-
-									 </tr>
-									 <tr>
-										 <td class="day">شنبه</td>
-										 <td class="date">12 فروردین 1394</td>
-										 <td class="time">12:45</td>
-										 <td><span class="label label-warning">برنامه</span></td>
-										 <td class="program_dl">
-											 <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-											 <span><a href="#" data-tooltip="دریافت برنامه تمرینی"><i class="fa fa-lemon-o" aria-hidden="true"></i></a></span>
-											 <span><i class="fa fa-line-chart" aria-hidden="true"></i></span>
-
-										 </td>
-										 <td class="status">
-										 	<span class="success"><i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
-										 </td>
-									 </tr>
-								 </table>
-								 </div>
-							 </div><!-- visit_list -->
-
+									</div>
+									</form>
+								</div><!-- register_section -->
 						 </div><!-- content -->
 					 </section><!-- col-sm-9 -->
-
 				 </div><!-- row -->
 			 </div><!-- container-fluid -->
 		 </main><!-- main -->
@@ -188,9 +146,11 @@
 	<script>
 	$(function () {
   $('[data-toggle="tooltip"]').tooltip()
+
 })
 
 	</script>
+
 	<script type="text/javascript">
 	$( document ).ready(function() {
 		$( "#toggle" ).click(function() {
@@ -201,14 +161,7 @@
 			$( "#wrapper" ).toggleClass( "wrapper_active" );
 			$( ".header" ).toggleClass( "header_active" );
 	});
-	$("span.close").click(function() {
-		$( this ).parent().addClass( "closed" );
-		// $( this ).parent().delay( 800 ).css( "display", "none" );
-
-
 });
-});
-
 	</script>
 	<script>
 			jQuery( ".btn-animated, .btn-animated-lg, .btn-anim-three, .btn-anim-back, .btn-anim-minus, .btn-anim-three-lg" ).on( "click", function() {

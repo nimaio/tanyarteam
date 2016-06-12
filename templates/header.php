@@ -15,19 +15,19 @@
   </div>
   <div class="menu_header">
     <ul>
-      <li>
+      <li class="hidden-sm hidden-xs">
         <a href="#">
           <i class="fa fa-globe" aria-hidden="true"></i>
           <span>تن یار</span>
         </a>
       </li>
-      <li>
+      <li class="hidden-sm hidden-xs">
         <a href="#">
           <i class="fa fa-info-circle" aria-hidden="true"></i>
           <span>راهنما</span>
         </a>
       </li>
-      <li>
+      <li class="hidden-sm hidden-xs">
         <a href="#">
           <i class="fa fa-shopping-basket" aria-hidden="true"></i>
           <span>فروشگاه</span>
